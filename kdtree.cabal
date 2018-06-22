@@ -2,7 +2,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                kdtree
-version:             0.1.0.0
+version:             0.1.0.1
 -- synopsis:
 -- description:
 license:             MIT
@@ -21,11 +21,11 @@ library
                       Data.KDTree.Internal.Common
   -- other-modules:
   -- other-extensions:
-  build-depends:      base >=4.4 && <4.8,
+  build-depends:      base>=4.8,
                       vector,
                       linear,
                       deepseq,
-                      recursion-schemes,
+                      recursion-schemes==5.*,
                       vector-algorithms
   hs-source-dirs:     src
   default-language:   Haskell2010
@@ -38,7 +38,7 @@ test-suite maintest
   hs-source-dirs:     test
   ghc-options:        -Wall -O2
   default-language:   Haskell2010
-  build-depends:      base >= 4.4 && <4.8,
+  build-depends:      base>=4.8,
                       kdtree,
                       vector,
                       QuickCheck,

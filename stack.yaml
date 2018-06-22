@@ -1,0 +1,16 @@
+resolver: lts-11.14
+
+packages:
+ - .
+ - location:
+     git: https://github.com/ekmett/recursion-schemes/
+     commit: 35d1a40528f233e383ed4279f9b582704c7caf65
+   extra-dep: true
+
+flags: {}
+
+extra-package-dbs: []
+
+system-ghc: true
+install-ghc: false
+compiler-check: newer-minor

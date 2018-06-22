@@ -58,11 +58,11 @@ data KDTreeF v a f = NodeF (Dim a) a f f
 -- implement Base, Foldable and Unfoldable for KDTree
 type instance Base (KDTree v a) = KDTreeF v a
 
-instance Foldable (KDTree v a) where
+instance Recursive (KDTree v a) where
   project (Leaf d a)     = LeafF d a
   project (Node d p l r) = NodeF d p l r
 
-instance Unfoldable (KDTree v a) where
+instance Corecursive (KDTree v a) where
   embed (LeafF d a)     = Leaf d a
   embed (NodeF d p l r) = Node d p l r
 
