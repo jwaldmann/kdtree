@@ -9,9 +9,9 @@ cache:
 
 matrix:
   include:
-    - env: BUILD=stack GHCVER=8.0.1 RESOLVER=lts-9.21
-      compiler: ": #stack 8.0.1"
-      addons: {apt: {packages: [ghc-8.0.1], sources: [hvr-ghc]}}
+    - env: BUILD=stack GHCVER=8.0.2 RESOLVER=lts-9.21
+      compiler: ": #stack 8.0.2"
+      addons: {apt: {packages: [ghc-8.0.2], sources: [hvr-ghc]}}
     - env: BUILD=stack GHCVER=8.2.2 RESOLVER=lts-11.14
       compiler: ": #stack 8.2.2"
       addons: {apt: {packages: [ghc-8.2.2], sources: [hvr-ghc]}}
@@ -25,12 +25,12 @@ matrix:
 # - in install we install (haskell) dependencies
 before_install:
  - unset CC
- - export PATH=$HOME/.local/bin:/opt/ghc/$GHCVER/bin:$PATH;;
+ - export PATH=$HOME/.local/bin:/opt/ghc/$GHCVER/bin:$PATH
  - ./.travis-setup.sh
 
 install:
  - echo "$(ghc --version) [$(ghc --print-project-git-commit-id 2> /dev/null || echo '?')]"
- - stack --resolver=$RESOLVER --no-terminal test --only-dependencies;;
+ - stack --resolver=$RESOLVER --no-terminal test --only-dependencies
 
 script:
  - set -e; stack --resolver=$RESOLVER --no-terminal test --ghc-options="-Werror"
