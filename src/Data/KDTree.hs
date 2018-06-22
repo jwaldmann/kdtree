@@ -10,8 +10,6 @@
 
 module Data.KDTree where
 
-
-
 import qualified Data.Vector.Generic          as G
 import qualified Data.Vector.Algorithms.Intro as I
 import qualified Data.List                    as L

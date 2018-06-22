@@ -84,9 +84,6 @@ main = do
 -- {-# SPECIALIZE KD.pointsAround     :: Double -> V3 Double -> KD.KDTree V.Vector V3D -> [V3D] #-}
 
 
-instance NFData a => NFData (V3 a) where
-    rnf (V3 x y z) = x `seq` y `seq` z `seq` ()
-
 instance Random (V3 Double) where
     randomR (V3 hx hy hz, V3 lx ly lz) g0 = (V3 x y z, g3)
       where (x,g1) = randomR (hx,lx) g0

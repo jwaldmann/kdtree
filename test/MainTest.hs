@@ -12,7 +12,7 @@ import Test.Framework.Providers.QuickCheck2
 import qualified Data.Vector.Storable as V
 import qualified Data.List as L
 
-import Control.Applicative
+-- import Control.Applicative
 import Control.Arrow
 
 import qualified Data.KDTree                    as KD
